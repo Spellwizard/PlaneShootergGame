@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_planeshooterggame" default="compile.module.planeshooterggame">
+  <dirname property="module.planeshooterggame.basedir" file="${ant.file.module_planeshooterggame}"/>
+  
+  <property name="module.jdk.home.planeshooterggame" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.planeshooterggame" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.planeshooterggame" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.planeshooterggame" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="planeshooterggame.output.dir" value="${module.planeshooterggame.basedir}/out/production/PlaneShootergGame"/>
+  <property name="planeshooterggame.testoutput.dir" value="${module.planeshooterggame.basedir}/out/test/PlaneShootergGame"/>
+  
+  <path id="planeshooterggame.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="planeshooterggame.module.production.classpath">
+    <path refid="${module.jdk.classpath.planeshooterggame}"/>
+  </path>
+  
+  <path id="planeshooterggame.runtime.production.module.classpath">
+    <pathelement location="${planeshooterggame.output.dir}"/>
+  </path>
+  
+  <path id="planeshooterggame.module.classpath">
+    <path refid="${module.jdk.classpath.planeshooterggame}"/>
+    <pathelement location="${planeshooterggame.output.dir}"/>
+  </path>
+  
+  <path id="planeshooterggame.runtime.module.classpath">
+    <pathelement location="${planeshooterggame.testoutput.dir}"/>
+    <pathelement location="${planeshooterggame.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.planeshooterggame">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.planeshooterggame">
+    <patternset refid="excluded.from.module.planeshooterggame"/>
+  </patternset>
+  
+  <path id="planeshooterggame.module.sourcepath">
+    <dirset dir="${module.planeshooterggame.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.planeshooterggame" depends="compile.module.planeshooterggame.production,compile.module.planeshooterggame.tests" description="Compile module PlaneShootergGame"/>
+  
+  <target name="compile.module.planeshooterggame.production" depends="register.custom.compilers" description="Compile module PlaneShootergGame; production classes">
+    <mkdir dir="${planeshooterggame.output.dir}"/>
+    <javac2 destdir="${planeshooterggame.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.planeshooterggame}/javac">
+      <compilerarg line="${compiler.args.planeshooterggame}"/>
+      <bootclasspath refid="planeshooterggame.module.bootclasspath"/>
+      <classpath refid="planeshooterggame.module.production.classpath"/>
+      <src refid="planeshooterggame.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.planeshooterggame"/>
+    </javac2>
+    
+    <copy todir="${planeshooterggame.output.dir}">
+      <fileset dir="${module.planeshooterggame.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.planeshooterggame.tests" depends="register.custom.compilers,compile.module.planeshooterggame.production" description="compile module PlaneShootergGame; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.planeshooterggame" description="cleanup module">
+    <delete dir="${planeshooterggame.output.dir}"/>
+    <delete dir="${planeshooterggame.testoutput.dir}"/>
+  </target>
+</project>

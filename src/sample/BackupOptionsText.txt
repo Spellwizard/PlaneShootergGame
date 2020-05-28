@@ -1,0 +1,146 @@
+*boolean isdebug
+isdebug = false
+
+*PLAYER VALUES:
+*private int 
+playerCount = 1
+
+*private int playerHealth = 150
+playerHealth = 100
+
+*private int playerWidth = 150
+playerWidth = 120
+
+*private int playerHeight = 120
+playerHeight = 90
+
+*private int playerdefaultHSpeed = 7
+playerdefaultHSpeed = 10
+
+*private int playerdefaultVSpeed = 4
+playerdefaultVSpeed = 5
+*
+*FIRST PLAYER KEYBOARD DEFAULT VALUES
+*int firstPlayer_buttonUp = 73
+firstPlayer_buttonUp = 73
+
+*int firstPlayer_buttonDown = 75
+firstPlayer_buttonDown = 75
+
+*int firstPlayer_buttonLeft = 74
+firstPlayer_buttonLeft = 74
+
+*int firstPlayer_buttonRight = 76
+ firstPlayer_buttonRight = 76
+
+*int firstPlayer_buttonFire = 85
+firstPlayer_buttonFire = 85
+
+*int firstPlayer_buttonBomb = 79
+firstPlayer_buttonBomb = 79
+
+*Second player's butto values
+*int secondPlayer_buttonUp =87 
+secondPlayer_buttonUp =87 
+
+*int secondPlayer_buttonDown = 83
+secondPlayer_buttonDown = 83
+
+*int secondPlayer_buttonLeft = 65
+secondPlayer_buttonLeft = 65
+
+*int secondPlayer_buttonRight = 68
+secondPlayer_buttonRight = 68
+
+*int secondPlayer_buttonFire = 81
+secondPlayer_buttonFire = 81
+
+*int secondPlayer_buttonBomb = 69
+secondPlayer_buttonBomb = 69
+
+*GAME VALUES
+boolean gamePaused = false
+
+*Image File paths
+truckFilePath = Truck.png
+truckFlipPath = TruckFlipped.png
+
+*JEEP FILE PATH
+jeepFilePath = Jeep.png
+    
+jeepFlipPath = JeepFlipped.png
+
+*SOLDIER FILE PATH
+soldierFilePath = Soldier.jpg
+soldierFlipPath = SoldierFlipped.jpg
+
+*THE BLUE PLAYER FILE PATH
+blueJetFilePath =BlueJet.png
+blueJetFlipPath =BlueJetFlipped.png
+
+*THE GREEN PLAYER FILE PATH
+greenJetFilePath=YellowWing.png
+greenJetFlipPath=YellowWingFlipped.png
+
+*THE DRONE FILE PATH
+droneFilePath = Drone.png
+droneFlipPath =DroneFlipped.png
+
+*THE BOMB FILE PATH
+bombFilePath = Bomb.png
+*The background image
+backgroundFilePath = Background_Endor.jpg
+
+ExplosionFilePath = Explosion.png
+
+*//Projectiles Values
+*private int projectile_height = 15;
+projectile_height = 7
+
+*private int projectile_width = 20;
+projectile_width = 50
+
+*bombs height and width
+*private int projBomb_height = 65
+projBomb_height = 65
+
+* private int projBomb_width = 60;
+projBomb_width = 60
+
+*Drone / Air Fighter's Values
+*private int droneCount = 7;
+droneCount = 4
+
+*private int droneHealth = 10
+droneHealth = 30
+
+*private int droneWidth = 125;
+droneWidth = 80
+
+*private int donerHeight = 60;
+donerHeight = 50
+
+*private int dronedefaultHSpeed = -5;
+dronedefaultHSpeed = -5
+
+*private int dronedefaultVSpeed = 2;
+dronedefaultVSpeed = 2
+
+
+*private int troopCount = 20;
+troopCount = 40
+*private int speederCount = 4;
+speederCount = 10
+*private int truckCount = 7;
+truckCount = 7
+
+
+*int troopHeight = 65
+*int troopWidth = 45
+*int speederHeight = 65
+*int speeerWidth = 90
+*int truckHeight = 100
+truckHeight = 65
+*int truckWidth = 135
+truckWidth = 100
+

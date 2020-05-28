@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PlaneShootergGame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PlaneShootergGame_jar</output-path>
+    <root id="archive" name="PlaneShootergGame.jar">
+      <element id="module-output" name="PlaneShootergGame" />
+    </root>
+  </artifact>
+</component>
