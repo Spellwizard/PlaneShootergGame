@@ -1,3 +1,5 @@
+package sample;
+
 import java.awt.*;
 
 public class Food extends SolidObject{

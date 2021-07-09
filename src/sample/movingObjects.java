@@ -1,3 +1,5 @@
+package sample;
+
 
 
 import javax.imageio.ImageIO;

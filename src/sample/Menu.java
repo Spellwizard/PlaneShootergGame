@@ -1,3 +1,5 @@
+package sample;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -331,7 +333,7 @@ class MenuSub extends JFrame implements ActionListener {
                 c.setBackground(Color.blue);
                 frame.setSize(1600,1200);
                 frame.setLocationRelativeTo(null);
-                frame.add(new GameCanvas());
+               // frame.add(new GameCanvas());
                 frame.setVisible(true);
 
                 //On Close of game window go back to the menu window

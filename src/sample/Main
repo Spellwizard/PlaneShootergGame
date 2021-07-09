@@ -1,15 +1,9 @@
-
+package sample;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
 
-        Container c = frame.getContentPane();
-        c.setBackground(Color.blue);
-        frame.setLocationRelativeTo(null);
-        GameCanvas program = new GameCanvas();
-        frame.add(program);
-        frame.setVisible(true);
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -27,16 +21,16 @@ import java.util.Random;
 import static java.lang.Math.*;
 
 
-public class Main {
+        public class Main {
 
-    public static JFrame frame = new JFrame("Frog Version: July 31, 2019");
+            public static JFrame frame = new JFrame("Frog Version: July 31, 2019");
 
 
-    public Main(){
+            public Main(){
 
-               Container c = frame.getContentPane();
-        c.setBackground(Color.blue);
-         frame.setLocationRelativeTo(null);
+                Container c = frame.getContentPane();
+                c.setBackground(Color.blue);
+                frame.setLocationRelativeTo(null);
          GameCanvas program = new GameCanvas();
         frame.add(program);
          frame.setVisible(true);
@@ -46,18 +40,6 @@ public class Main {
             @Override
             public void windowClosing(WindowEvent e) {
                 System.out.println("Closing Window");
-
-                FileReader ouputData = null;
-                try {
-                    ouputData = new FileReader("DataOutput.txt");
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
-                }
-
-                for(String line: program.getDateOutput()){
-                    ouputData.addLine(line);
-                    ouputData.addLine("FUnnny");
-                }
 
                 Menu.makeVisible();
             }
@@ -195,11 +177,18 @@ public class Main {
             this.setPreferredSize(new Dimension(WINDOWWIDTH,WINDOWHEIGHT));
             gamePaused = false;
             InitializeDefaultValues();
-            firstTimeinitialization();
+
+            try {
+                firstTimeinitialization();
+            }
+            catch(Exception e){
+
+            }
         }
 
-        private void overrideGameValues(String fileName) {
-            FileReader file = new FileReader(fileName);
+        private void overrideGameValues(String fileName) throws FileNotFoundException {
+
+            sample.FileReader file = new sample.FileReader(fileName);
 
 
             //if there is a new relavent parameter value then overrride otherwise move on
@@ -265,7 +254,7 @@ public class Main {
                 pelletCount = convertStringToInt(file.findValue("pelletCount"));
         }
 
-        private void OverridePlayerValues(FileReader file) {
+        private void OverridePlayerValues(sample.FileReader file) {
             //PLAYER COUNT
             String temp = "initPopulationSize";
             //confirm that the array contains the desired value and isn't an empty value
@@ -334,7 +323,7 @@ public class Main {
 
         }
 
-        private void OverrideFirstPlayerInputs(FileReader file) {
+        private void OverrideFirstPlayerInputs(sample.FileReader file) {
             String temp = "";
 
             /**
@@ -417,7 +406,7 @@ public class Main {
             return null;
         }
 
-        private void firstTimeinitialization() {
+        private void firstTimeinitialization() throws FileNotFoundException {
 
             overrideGameValues("GameSettings.txt");
 

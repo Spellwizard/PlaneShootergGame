@@ -3,7 +3,7 @@ package sample;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Projectile extends movingObjects{
+public class Projectile extends sample.movingObjects{
 
     //projectiles should move fast, this multiples whatever direction the player is going by this interger to set the projectile speed
     int multiplier = 2;
@@ -66,22 +66,6 @@ public class Projectile extends movingObjects{
         }
     }
 
-    @Override
-    public boolean drawObject(Graphics2D gg){
-        if(isExplode){
-            //check to see if the object is an explosion and that the image is not intialized
-            if(super.getR_Image()==null || super.getL_Image()==null){
-                super.setObjColour(Color.orange);
-                super.drawObject(gg,true);
-            }
-            else{
-                super.drawObject(gg);
-            }
-            return true;
-        }
-        return super.drawObject(gg);
-
-    }
 
 
 
